@@ -53,6 +53,32 @@
 
 ---
 
+## 1.5 FCM의 안전성 특장점 (Safety Advantages)
+
+FCM을 선택하는 이유이자, FCM이 기본 제공하는 안전 메커니즘:
+
+| 특장점 | 상세 | 근거 |
+|--------|------|------|
+| **전송 중 암호화** | 서버↔FCM↔디바이스 간 TLS 암호화 적용 | FCM 아키텍처 문서 [^a1] |
+| **OAuth2 인증** | HTTP v1 API는 단기 만료(~1시간) OAuth2 토큰 사용, 고정 API 키보다 안전 | Legacy API의 고정 Server Key 방식 대비 보안 강화 [^a2] |
+| **플랫폼 공식 지원** | Google(Android ATL) + Apple(APNs 프록시) 공식 전송 계층 사용 | 비공식 채널 대비 안정성/호환성 보장 |
+| **자동 토큰 갱신** | FCM SDK가 토큰 갱신을 자동 처리, 개발자는 콜백만 구현 | Firebase Messaging SDK 문서 |
+| **크로스플랫폼 단일 API** | 하나의 HTTP v1 API로 Android/iOS/Web 모두 전송 가능 | 플랫폼별 개별 구현 불필요 [^a2] |
+| **토픽/그룹 기반 팬아웃** | 서버가 개별 토큰을 관리하지 않아도 토픽 구독만으로 브로드캐스트 가능 | FCM Topic Messaging 문서 [^a3] |
+| **FCM Data API** | 전송 상태 7가지 카테고리로 모니터링 가능 (Delivered, Pending, TTL Expired 등) | [^a4] |
+| **무료** | 전송량 무관하게 무료 (할당량 내) | Firebase 가격 정책 |
+| **오프라인 저장** | 디바이스 오프라인 시 최대 28일간 메시지 큐잉 | FCM TTL 문서 [^a5] |
+
+**주의**: FCM은 **종단 간 암호화(E2E)를 제공하지 않는다**. 전송 중 암호화만 적용되며, FCM 서버는 페이로드를 읽을 수 있다. 민감 데이터는 앱 레벨에서 별도 암호화해야 한다.
+
+[^a1]: https://firebase.google.com/docs/cloud-messaging/fcm-architecture
+[^a2]: https://firebase.google.com/docs/cloud-messaging/send/v1-api
+[^a3]: https://firebase.google.com/docs/cloud-messaging/topic-messaging
+[^a4]: https://firebase.google.com/docs/cloud-messaging/understand-delivery
+[^a5]: https://firebase.google.com/docs/cloud-messaging/customize-messages/setting-message-lifespan
+
+---
+
 ## 2. API 버전
 
 ### 2.1 HTTP v1 API (현재 권장)
@@ -278,17 +304,32 @@ FCM이 제공하는 메시지 상태 7가지:
 
 ## 10. 참고 문헌
 
-| 출처 | URL |
-|------|-----|
-| FCM 아키텍처 개요 | https://firebase.google.com/docs/cloud-messaging/fcm-architecture |
-| FCM HTTP v1 API | https://firebase.google.com/docs/cloud-messaging/send/v1-api |
-| 메시지 유형 | https://firebase.google.com/docs/cloud-messaging/customize-messages/set-message-type |
-| Android 메시지 수신 | https://firebase.google.com/docs/cloud-messaging/android/receive-messages |
-| 토큰 관리 모범 사례 | https://firebase.google.com/docs/cloud-messaging/manage-tokens |
-| 스로틀링 및 할당량 | https://firebase.google.com/docs/cloud-messaging/throttling-and-quotas |
-| Android 메시지 우선순위 | https://firebase.google.com/docs/cloud-messaging/android-message-priority |
-| 메시지 수명/TTL | https://firebase.google.com/docs/cloud-messaging/customize-messages/setting-message-lifespan |
-| Collapsible 메시지 유형 | https://firebase.google.com/docs/cloud-messaging/customize-messages/collapsible-message-types |
-| FCM 전달률 이해 | https://firebase.blog/posts/2024/07/understand-fcm-delivery-rates/ |
-| Android Doze/App Standby | https://developer.android.com/training/monitoring-device-state/doze-standby |
-| FCM 대규모 전송 모범 사례 | https://firebase.google.com/docs/cloud-messaging/scale-fcm |
+[^1]: Firebase, "FCM architectural overview," https://firebase.google.com/docs/cloud-messaging/fcm-architecture — 아키텍처, 전송 흐름, 플랫폼 전송 계층
+
+[^2]: Firebase, "FCM HTTP v1 API," https://firebase.google.com/docs/cloud-messaging/send/v1-api — HTTP v1 엔드포인트, OAuth2 인증, 플랫폼별 페이로드
+
+[^3]: Firebase, "Set message type," https://firebase.google.com/docs/cloud-messaging/customize-messages/set-message-type — Notification/Data/Combined 메시지 유형
+
+[^4]: Firebase, "Receive messages in an Android app," https://firebase.google.com/docs/cloud-messaging/android/receive-messages — Android 앱 상태별 메시지 처리 동작
+
+[^5]: Firebase, "Manage FCM registration tokens," https://firebase.google.com/docs/cloud-messaging/manage-tokens — 토큰 생명주기, stale 토큰 정리, ~15% 드롭 데이터
+
+[^6]: Firebase, "Throttling and Quotas," https://firebase.google.com/docs/cloud-messaging/throttling-and-quotas — 프로젝트/디바이스별 Rate limit, Collapsible 스로틀링 수치
+
+[^7]: Firebase, "Set and manage Android message priority," https://firebase.google.com/docs/cloud-messaging/android-message-priority — HIGH/NORMAL 우선순위, 7일 자동 강등
+
+[^8]: Firebase, "Setting message lifespan (TTL)," https://firebase.google.com/docs/cloud-messaging/customize-messages/setting-message-lifespan — TTL 기본값 28일, TTL=0 동작
+
+[^9]: Firebase, "Collapsible message types," https://firebase.google.com/docs/cloud-messaging/customize-messages/collapsible-message-types — Collapsible vs Non-collapsible, 100건 한도
+
+[^10]: Firebase, "Understanding FCM delivery rates," https://firebase.blog/posts/2024/07/understand-fcm-delivery-rates/ — FCM Data API 상태 카테고리, 전달률 분석
+
+[^11]: Android Developers, "Optimize for Doze and App Standby," https://developer.android.com/training/monitoring-device-state/doze-standby — Doze 모드 동작, App Standby Buckets
+
+[^12]: Firebase, "Best practices for sending FCM messages at scale," https://firebase.google.com/docs/cloud-messaging/scale-fcm — 대규모 전송 최적화, 팬아웃 제한
+
+**학술 논문:**
+
+[^13]: G. Albertengo, F.G. Debele, W. Hassan, D. Stramandino, "On the Performance of Web Services, Google Cloud Messaging and Firebase Cloud Messaging," *Digital Communications and Networks*, Vol. 6, Issue 1, pp. 31-37, 2019. DOI: 10.1016/j.dcan.2019.02.002 — GCM/FCM vs REST/SOAP 성능 비교
+
+[^14]: A. Sahami Shirazi, N. Henze, T. Dingler, M. Pielot, D. Weber, A. Schmidt, "Large-Scale Assessment of Mobile Notifications," *CHI '14*, ACM, 2014. DOI: 10.1145/2556288.2557189 — 4만+ 사용자, 2억+ 알림 대규모 분석

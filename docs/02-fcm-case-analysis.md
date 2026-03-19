@@ -270,7 +270,10 @@ Layer 4: 네트워크/디바이스 (환경 요인)
 | **UNSTABLE-06** (대규모 팬아웃) | ≥ 95% | 수십초~수분 | 거의 없음 | 시간 경과로 해소 |
 | **UNSTABLE-08** (OEM 최적화) | **20~55%** | 수분~수시간 | 45~80% | **사용자 수동 화이트리스트만** |
 | **UNSTABLE-09** (Doze) | ≥ 95% (HIGH) | 수분~수시간 (NORMAL) | 거의 없음 | HIGH 우선순위 사용 |
+| **UNSTABLE-10** (App Standby) | Bucket별 상이 | Bucket별 상이 | Rare 버킷에서 증가 | Android 13+에서 해소 |
 | **UNSTABLE-11** (iOS Silent) | 시간당 2~3건 | < 1s (전달 시) | 초과분 전량 | **해결 불가** (Apple 정책) |
+| **UNSTABLE-12** (iOS Force Kill) | Notification: 정상, Data: 0% | — | Data 전량 | 앱 재실행 시 복구 |
+| **UNSTABLE-14** (네트워크 불안정) | 서버측 재시도 97% | 네트워크 품질 비례 | 일시적 | 재시도로 복구 |
 | **UNSTABLE-13** (장기 오프라인) | 0% | — | 전량 | 재연결 전까지 불가 |
 | **UNSTABLE-15** (GMS 없음) | 0% | — | 전량 | HMS 별도 연동 |
 
@@ -296,7 +299,8 @@ Layer 4: 네트워크/디바이스 (환경 요인)
 심각도 Low (즉시 감지/해결 가능):
   11. UNSTABLE-02: 페이로드 초과
   12. UNSTABLE-07: FCM 서버 일시 장애
-  13. UNSTABLE-14: 네트워크 불안정
+  13. UNSTABLE-10: App Standby Bucket (Android 13+에서 해소)
+  14. UNSTABLE-14: 네트워크 불안정
 ```
 
 ---
