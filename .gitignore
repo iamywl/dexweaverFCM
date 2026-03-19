@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+dist/
+
+# Firebase (secrets)
+serviceAccountKey.json
+*-firebase-adminsdk-*.json
+GoogleService-Info.plist
+google-services.json
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+
+# OS
+.DS_Store
+~$*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Flutter
+app/.dart_tool/
+app/.packages
+app/build/
+app/ios/Pods/
+app/ios/Runner/GoogleService-Info.plist
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+
+# FlutterFire reference repo (not part of this project)
+flutterfire/
+
+# Results (optional - uncomment to track)
+# results/
+
+# Environment
+.env
+*.log

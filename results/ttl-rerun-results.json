@@ -1,0 +1,218 @@
+[
+  {
+    "id": "STP-C1-v2",
+    "name": "TTL=0 (즉시 전달 또는 폐기)",
+    "description": "TTL 0초 (밀리초 변환 수정 후 재실험)",
+    "experimentId": "STP-C1-v2-R1-54f4d0bf",
+    "repeat": 1,
+    "parameters": {
+      "type": "combined",
+      "priority": "high",
+      "interval": 200,
+      "ttl": 0,
+      "count": 50
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 68.58,
+      "m3_p95LatencyMs": 197,
+      "m4_p99LatencyMs": 458,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.563770563582911
+    }
+  },
+  {
+    "id": "STP-C1-v2",
+    "name": "TTL=0 (즉시 전달 또는 폐기)",
+    "description": "TTL 0초 (밀리초 변환 수정 후 재실험)",
+    "experimentId": "STP-C1-v2-R2-47a8d6b7",
+    "repeat": 2,
+    "parameters": {
+      "type": "combined",
+      "priority": "high",
+      "interval": 200,
+      "ttl": 0,
+      "count": 50
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 57.52,
+      "m3_p95LatencyMs": 178,
+      "m4_p99LatencyMs": 257,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.646090534979424
+    }
+  },
+  {
+    "id": "STP-C1-v2",
+    "name": "TTL=0 (즉시 전달 또는 폐기)",
+    "description": "TTL 0초 (밀리초 변환 수정 후 재실험)",
+    "experimentId": "STP-C1-v2-R3-b8f2781b",
+    "repeat": 3,
+    "parameters": {
+      "type": "combined",
+      "priority": "high",
+      "interval": 200,
+      "ttl": 0,
+      "count": 50
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 60.3,
+      "m3_p95LatencyMs": 208,
+      "m4_p99LatencyMs": 269,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.6730241584688483
+    }
+  },
+  {
+    "id": "STP-C2-v2",
+    "name": "TTL=86400 (24시간)",
+    "description": "TTL 24시간 (밀리초 변환 수정 후 재실험)",
+    "experimentId": "STP-C2-v2-R1-81a0ab16",
+    "repeat": 1,
+    "parameters": {
+      "type": "combined",
+      "priority": "high",
+      "interval": 200,
+      "ttl": 86400,
+      "count": 50
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 77.72,
+      "m3_p95LatencyMs": 212,
+      "m4_p99LatencyMs": 247,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.6604675876726886
+    }
+  },
+  {
+    "id": "STP-C2-v2",
+    "name": "TTL=86400 (24시간)",
+    "description": "TTL 24시간 (밀리초 변환 수정 후 재실험)",
+    "experimentId": "STP-C2-v2-R2-bd2b17f0",
+    "repeat": 2,
+    "parameters": {
+      "type": "combined",
+      "priority": "high",
+      "interval": 200,
+      "ttl": 86400,
+      "count": 50
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 90.24,
+      "m3_p95LatencyMs": 226,
+      "m4_p99LatencyMs": 415,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.5780835753061482
+    }
+  },
+  {
+    "id": "STP-C2-v2",
+    "name": "TTL=86400 (24시간)",
+    "description": "TTL 24시간 (밀리초 변환 수정 후 재실험)",
+    "experimentId": "STP-C2-v2-R3-e16b7ee6",
+    "repeat": 3,
+    "parameters": {
+      "type": "combined",
+      "priority": "high",
+      "interval": 200,
+      "ttl": 86400,
+      "count": 50
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 88.56,
+      "m3_p95LatencyMs": 212,
+      "m4_p99LatencyMs": 239,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.620430386310604
+    }
+  },
+  {
+    "id": "STP-C3-v2",
+    "name": "TTL=2419200 (28일, 최대)",
+    "description": "TTL 28일 최대 보관 (밀리초 변환 수정 후 재실험)",
+    "experimentId": "STP-C3-v2-R1-6082b545",
+    "repeat": 1,
+    "parameters": {
+      "type": "combined",
+      "priority": "high",
+      "interval": 200,
+      "ttl": 2419200,
+      "count": 50
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 89.92,
+      "m3_p95LatencyMs": 217,
+      "m4_p99LatencyMs": 230,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.6166057745158267
+    }
+  },
+  {
+    "id": "STP-C3-v2",
+    "name": "TTL=2419200 (28일, 최대)",
+    "description": "TTL 28일 최대 보관 (밀리초 변환 수정 후 재실험)",
+    "experimentId": "STP-C3-v2-R2-63d36683",
+    "repeat": 2,
+    "parameters": {
+      "type": "combined",
+      "priority": "high",
+      "interval": 200,
+      "ttl": 2419200,
+      "count": 50
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 93.9,
+      "m3_p95LatencyMs": 218,
+      "m4_p99LatencyMs": 303,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.5562749003984064
+    }
+  },
+  {
+    "id": "STP-C3-v2",
+    "name": "TTL=2419200 (28일, 최대)",
+    "description": "TTL 28일 최대 보관 (밀리초 변환 수정 후 재실험)",
+    "experimentId": "STP-C3-v2-R3-6d19bd9f",
+    "repeat": 3,
+    "parameters": {
+      "type": "combined",
+      "priority": "high",
+      "interval": 200,
+      "ttl": 2419200,
+      "count": 50
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 75.44,
+      "m3_p95LatencyMs": 215,
+      "m4_p99LatencyMs": 301,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.6543691890282235
+    }
+  }
+]

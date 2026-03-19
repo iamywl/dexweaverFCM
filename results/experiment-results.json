@@ -1,0 +1,530 @@
+[
+  {
+    "scenario": "EXP-S01",
+    "description": "Baseline: 단일 디바이스 정상 전송 (data 메시지, foreground) (repeat 1/3)",
+    "experimentId": "EXP-S01-R1-d65d7c89",
+    "parameters": {
+      "count": 50,
+      "type": "data",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 109.88,
+      "m3_p95LatencyMs": 221,
+      "m4_p99LatencyMs": 477,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.554629687208507
+    }
+  },
+  {
+    "scenario": "EXP-S01",
+    "description": "Baseline: 단일 디바이스 정상 전송 (data 메시지, foreground) (repeat 2/3)",
+    "experimentId": "EXP-S01-R2-b971b973",
+    "parameters": {
+      "count": 50,
+      "type": "data",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 90.24,
+      "m3_p95LatencyMs": 213,
+      "m4_p99LatencyMs": 229,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.647012319652151
+    }
+  },
+  {
+    "scenario": "EXP-S01",
+    "description": "Baseline: 단일 디바이스 정상 전송 (data 메시지, foreground) (repeat 3/3)",
+    "experimentId": "EXP-S01-R3-d7057bef",
+    "parameters": {
+      "count": 50,
+      "type": "data",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 80.08,
+      "m3_p95LatencyMs": 205,
+      "m4_p99LatencyMs": 296,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.7155601303825698
+    }
+  },
+  {
+    "scenario": "EXP-S02",
+    "description": "Notification 메시지 전송 (repeat 1/3)",
+    "experimentId": "EXP-S02-R1-b881a925",
+    "parameters": {
+      "count": 50,
+      "type": "notification",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 97.02,
+      "m3_p95LatencyMs": 229,
+      "m4_p99LatencyMs": 300,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.6360721180589641
+    }
+  },
+  {
+    "scenario": "EXP-S02",
+    "description": "Notification 메시지 전송 (repeat 2/3)",
+    "experimentId": "EXP-S02-R2-a37f49df",
+    "parameters": {
+      "count": 50,
+      "type": "notification",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 93.24,
+      "m3_p95LatencyMs": 205,
+      "m4_p99LatencyMs": 291,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.6067870685776722
+    }
+  },
+  {
+    "scenario": "EXP-S02",
+    "description": "Notification 메시지 전송 (repeat 3/3)",
+    "experimentId": "EXP-S02-R3-7d134dba",
+    "parameters": {
+      "count": 50,
+      "type": "notification",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 98.24,
+      "m3_p95LatencyMs": 218,
+      "m4_p99LatencyMs": 258,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.6723526657301493
+    }
+  },
+  {
+    "scenario": "EXP-S03",
+    "description": "Combined (data+notification) 메시지 전송 (repeat 1/3)",
+    "experimentId": "EXP-S03-R1-e3350bba",
+    "parameters": {
+      "count": 50,
+      "type": "combined",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 90.24,
+      "m3_p95LatencyMs": 216,
+      "m4_p99LatencyMs": 333,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.782721859735444
+    }
+  },
+  {
+    "scenario": "EXP-S03",
+    "description": "Combined (data+notification) 메시지 전송 (repeat 2/3)",
+    "experimentId": "EXP-S03-R2-41d365ec",
+    "parameters": {
+      "count": 50,
+      "type": "combined",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 79.16,
+      "m3_p95LatencyMs": 165,
+      "m4_p99LatencyMs": 256,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.7804365630452588
+    }
+  },
+  {
+    "scenario": "EXP-S03",
+    "description": "Combined (data+notification) 메시지 전송 (repeat 3/3)",
+    "experimentId": "EXP-S03-R3-3e9b7ee4",
+    "parameters": {
+      "count": 50,
+      "type": "combined",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 89.34,
+      "m3_p95LatencyMs": 210,
+      "m4_p99LatencyMs": 334,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.7850767583006069
+    }
+  },
+  {
+    "scenario": "EXP-S04",
+    "description": "Collapsible 메시지 (collapse_key 사용) (repeat 1/3)",
+    "experimentId": "EXP-S04-R1-a67c9d4c",
+    "parameters": {
+      "count": 30,
+      "type": "data",
+      "interval": 500,
+      "collapseKey": "collapsible-test",
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 110.26666666666667,
+      "m3_p95LatencyMs": 210,
+      "m4_p99LatencyMs": 244,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.13194732671773
+    }
+  },
+  {
+    "scenario": "EXP-S04",
+    "description": "Collapsible 메시지 (collapse_key 사용) (repeat 2/3)",
+    "experimentId": "EXP-S04-R2-7496bb89",
+    "parameters": {
+      "count": 30,
+      "type": "data",
+      "interval": 500,
+      "collapseKey": "collapsible-test",
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 116.53333333333333,
+      "m3_p95LatencyMs": 214,
+      "m4_p99LatencyMs": 215,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.1227124733355787
+    }
+  },
+  {
+    "scenario": "EXP-S04",
+    "description": "Collapsible 메시지 (collapse_key 사용) (repeat 3/3)",
+    "experimentId": "EXP-S04-R3-8e47563c",
+    "parameters": {
+      "count": 30,
+      "type": "data",
+      "interval": 500,
+      "collapseKey": "collapsible-test",
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 115,
+      "m3_p95LatencyMs": 279,
+      "m4_p99LatencyMs": 490,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.1383471199817865
+    }
+  },
+  {
+    "scenario": "EXP-S05-fast",
+    "description": "빠른 전송 간격 (50ms) (repeat 1/3)",
+    "experimentId": "EXP-S05-fast-R1-ae532f6b",
+    "parameters": {
+      "count": 50,
+      "type": "combined",
+      "interval": 50,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 117.9,
+      "m3_p95LatencyMs": 227,
+      "m4_p99LatencyMs": 244,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 2.0560055923352114
+    }
+  },
+  {
+    "scenario": "EXP-S05-fast",
+    "description": "빠른 전송 간격 (50ms) (repeat 2/3)",
+    "experimentId": "EXP-S05-fast-R2-98581e0b",
+    "parameters": {
+      "count": 50,
+      "type": "combined",
+      "interval": 50,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 111.48,
+      "m3_p95LatencyMs": 213,
+      "m4_p99LatencyMs": 224,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 2.0372407611131482
+    }
+  },
+  {
+    "scenario": "EXP-S05-fast",
+    "description": "빠른 전송 간격 (50ms) (repeat 3/3)",
+    "experimentId": "EXP-S05-fast-R3-8cafb5c1",
+    "parameters": {
+      "count": 50,
+      "type": "combined",
+      "interval": 50,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 142.82,
+      "m3_p95LatencyMs": 245,
+      "m4_p99LatencyMs": 303,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 2.0508613617719442
+    }
+  },
+  {
+    "scenario": "EXP-S05-slow",
+    "description": "느린 전송 간격 (1000ms) (repeat 1/3)",
+    "experimentId": "EXP-S05-slow-R1-a97e9059",
+    "parameters": {
+      "count": 30,
+      "type": "combined",
+      "interval": 1000,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 114.33333333333333,
+      "m3_p95LatencyMs": 219,
+      "m4_p99LatencyMs": 220,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 0.7257245149741158
+    }
+  },
+  {
+    "scenario": "EXP-S05-slow",
+    "description": "느린 전송 간격 (1000ms) (repeat 2/3)",
+    "experimentId": "EXP-S05-slow-R2-ad16b99a",
+    "parameters": {
+      "count": 30,
+      "type": "combined",
+      "interval": 1000,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 108.5,
+      "m3_p95LatencyMs": 227,
+      "m4_p99LatencyMs": 242,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 0.7168458781362007
+    }
+  },
+  {
+    "scenario": "EXP-S05-slow",
+    "description": "느린 전송 간격 (1000ms) (repeat 3/3)",
+    "experimentId": "EXP-S05-slow-R3-c88d4edb",
+    "parameters": {
+      "count": 30,
+      "type": "combined",
+      "interval": 1000,
+      "collapseKey": null,
+      "payloadSize": null
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 115.83333333333333,
+      "m3_p95LatencyMs": 221,
+      "m4_p99LatencyMs": 321,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 0.7206687806284232
+    }
+  },
+  {
+    "scenario": "EXP-U02-1KB",
+    "description": "페이로드 크기 1KB (repeat 1/3)",
+    "experimentId": "EXP-U02-1KB-R1-9a5e1a3d",
+    "parameters": {
+      "count": 30,
+      "type": "data",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": 1024
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 104.5,
+      "m3_p95LatencyMs": 249,
+      "m4_p99LatencyMs": 274,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.7158544955387782
+    }
+  },
+  {
+    "scenario": "EXP-U02-1KB",
+    "description": "페이로드 크기 1KB (repeat 2/3)",
+    "experimentId": "EXP-U02-1KB-R2-6c186e66",
+    "parameters": {
+      "count": 30,
+      "type": "data",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": 1024
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 99.3,
+      "m3_p95LatencyMs": 167,
+      "m4_p99LatencyMs": 255,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.7137960582690661
+    }
+  },
+  {
+    "scenario": "EXP-U02-1KB",
+    "description": "페이로드 크기 1KB (repeat 3/3)",
+    "experimentId": "EXP-U02-1KB-R3-7075ee33",
+    "parameters": {
+      "count": 30,
+      "type": "data",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": 1024
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 111.06666666666666,
+      "m3_p95LatencyMs": 205,
+      "m4_p99LatencyMs": 295,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.6824631260164882
+    }
+  },
+  {
+    "scenario": "EXP-U02-3KB",
+    "description": "페이로드 크기 3KB (repeat 1/3)",
+    "experimentId": "EXP-U02-3KB-R1-61190368",
+    "parameters": {
+      "count": 30,
+      "type": "data",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": 3072
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 104.76666666666667,
+      "m3_p95LatencyMs": 289,
+      "m4_p99LatencyMs": 346,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.6386279222197946
+    }
+  },
+  {
+    "scenario": "EXP-U02-3KB",
+    "description": "페이로드 크기 3KB (repeat 2/3)",
+    "experimentId": "EXP-U02-3KB-R2-fdcd7d6c",
+    "parameters": {
+      "count": 30,
+      "type": "data",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": 3072
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 93.76666666666667,
+      "m3_p95LatencyMs": 279,
+      "m4_p99LatencyMs": 323,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.7363120731566155
+    }
+  },
+  {
+    "scenario": "EXP-U02-3KB",
+    "description": "페이로드 크기 3KB (repeat 3/3)",
+    "experimentId": "EXP-U02-3KB-R3-e0488aa2",
+    "parameters": {
+      "count": 30,
+      "type": "data",
+      "interval": 200,
+      "collapseKey": null,
+      "payloadSize": 3072
+    },
+    "metrics": {
+      "m1_deliveryRate": 100,
+      "m2_avgLatencyMs": 96.6,
+      "m3_p95LatencyMs": 270,
+      "m4_p99LatencyMs": 304,
+      "m5_retryRate": 0,
+      "m6_dlqRate": 0,
+      "m7_duplicateRate": 0,
+      "m8_throughput": 1.682935038707506
+    }
+  }
+]

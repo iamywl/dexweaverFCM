@@ -1,0 +1,49 @@
+scenario_id,scenario_name,group,repeat,msg_type,priority,interval_ms,ttl_sec,collapse_key,payload_bytes,msg_count,delivery_rate_pct,avg_latency_ms,p95_latency_ms,p99_latency_ms,retry_rate_pct,dlq_rate_pct,duplicate_rate_pct,throughput_msg_per_sec,experiment_id
+STP-A1,"Data-only (Silent Push)",A,1,data,high,200,,,,50,100.00,113.9,303.0,428.0,0.00,0.00,0.00,1.60,STP-A1-R1-c82b519b
+STP-A1,"Data-only (Silent Push)",A,2,data,high,200,,,,50,100.00,95.1,231.0,266.0,0.00,0.00,0.00,1.69,STP-A1-R2-946d0a7f
+STP-A1,"Data-only (Silent Push)",A,3,data,high,200,,,,50,100.00,88.3,168.0,223.0,0.00,0.00,0.00,1.75,STP-A1-R3-f6e0f9bc
+STP-A2,"Notification-only",A,1,notification,high,200,,,,50,100.00,91.1,163.0,330.0,0.00,0.00,0.00,1.75,STP-A2-R1-ffdbe226
+STP-A2,"Notification-only",A,2,notification,high,200,,,,50,100.00,94.9,206.0,240.0,0.00,0.00,0.00,1.69,STP-A2-R2-d6a88be7
+STP-A2,"Notification-only",A,3,notification,high,200,,,,50,100.00,95.6,190.0,245.0,0.00,0.00,0.00,1.82,STP-A2-R3-3c06be9c
+STP-A3,"Combined (Data+Notification)",A,1,combined,high,200,,,,50,100.00,75.6,182.0,225.0,0.00,0.00,0.00,1.70,STP-A3-R1-c88b30cc
+STP-A3,"Combined (Data+Notification)",A,2,combined,high,200,,,,50,100.00,70.2,160.0,321.0,0.00,0.00,0.00,1.74,STP-A3-R2-27a26350
+STP-A3,"Combined (Data+Notification)",A,3,combined,high,200,,,,50,100.00,61.7,145.0,153.0,0.00,0.00,0.00,1.75,STP-A3-R3-a6a80e51
+STP-B1,"High Priority",B,1,combined,high,200,,,,50,100.00,63.2,179.0,272.0,0.00,0.00,0.00,1.77,STP-B1-R1-51059a81
+STP-B1,"High Priority",B,2,combined,high,200,,,,50,100.00,65.8,152.0,276.0,0.00,0.00,0.00,1.71,STP-B1-R2-b8db1425
+STP-B1,"High Priority",B,3,combined,high,200,,,,50,100.00,79.6,214.0,297.0,0.00,0.00,0.00,1.70,STP-B1-R3-cddbb2cf
+STP-B2,"Normal Priority",B,1,combined,normal,200,,,,50,100.00,62.1,140.0,170.0,0.00,0.00,0.00,1.74,STP-B2-R1-e79ae02a
+STP-B2,"Normal Priority",B,2,combined,normal,200,,,,50,100.00,67.5,139.0,440.0,0.00,0.00,0.00,1.71,STP-B2-R2-078c3bd2
+STP-B2,"Normal Priority",B,3,combined,normal,200,,,,50,100.00,67.0,195.0,211.0,0.00,0.00,0.00,1.77,STP-B2-R3-f8ec2f06
+STP-C1,"TTL=0 (즉시 전달 또는 폐기)",C,1,combined,high,200,0,,,50,0.00,,,,0.00,0.00,0.00,1.90,STP-C1-R1-87548615
+STP-C1,"TTL=0 (즉시 전달 또는 폐기)",C,2,combined,high,200,0,,,50,0.00,,,,0.00,0.00,0.00,1.87,STP-C1-R2-92a20482
+STP-C1,"TTL=0 (즉시 전달 또는 폐기)",C,3,combined,high,200,0,,,50,0.00,,,,0.00,0.00,0.00,1.91,STP-C1-R3-b652342e
+STP-C2,"TTL=86400 (24시간)",C,1,combined,high,200,86400,,,50,0.00,,,,0.00,0.00,0.00,1.89,STP-C2-R1-80ee2a8b
+STP-C2,"TTL=86400 (24시간)",C,2,combined,high,200,86400,,,50,0.00,,,,0.00,0.00,0.00,1.91,STP-C2-R2-51080a24
+STP-C2,"TTL=86400 (24시간)",C,3,combined,high,200,86400,,,50,0.00,,,,0.00,0.00,0.00,1.91,STP-C2-R3-a1932886
+STP-C3,"TTL=2419200 (28일, 최대)",C,1,combined,high,200,2419200,,,50,0.00,,,,0.00,0.00,0.00,1.87,STP-C3-R1-346ac0f2
+STP-C3,"TTL=2419200 (28일, 최대)",C,2,combined,high,200,2419200,,,50,0.00,,,,0.00,0.00,0.00,1.91,STP-C3-R2-376ead51
+STP-C3,"TTL=2419200 (28일, 최대)",C,3,combined,high,200,2419200,,,50,0.00,,,,0.00,0.00,0.00,1.88,STP-C3-R3-05580928
+STP-D1,"Non-collapsible (각각 고유)",D,1,data,high,200,,,,50,100.00,76.0,200.0,213.0,0.00,0.00,0.00,1.67,STP-D1-R1-908df713
+STP-D1,"Non-collapsible (각각 고유)",D,2,data,high,200,,,,50,100.00,62.6,134.0,205.0,0.00,0.00,0.00,1.71,STP-D1-R2-55685230
+STP-D1,"Non-collapsible (각각 고유)",D,3,data,high,200,,,,50,100.00,79.4,190.0,217.0,0.00,0.00,0.00,1.66,STP-D1-R3-e43777ad
+STP-D2,"Collapsible (동일 키)",D,1,data,high,200,,server-update,,50,40.00,70.8,148.0,180.0,0.00,0.00,0.00,1.33,STP-D2-R1-f919d2c9
+STP-D2,"Collapsible (동일 키)",D,2,data,high,200,,server-update,,50,0.00,,,,0.00,0.00,0.00,1.61,STP-D2-R2-54658e27
+STP-D2,"Collapsible (동일 키)",D,3,data,high,200,,server-update,,50,0.00,,,,0.00,0.00,0.00,1.59,STP-D2-R3-f5fd6e51
+STP-E1,"Burst (10ms 간격)",E,1,combined,high,10,,,,50,100.00,81.2,179.0,198.0,0.00,0.00,0.00,2.50,STP-E1-R1-1ed2f612
+STP-E1,"Burst (10ms 간격)",E,2,combined,high,10,,,,50,100.00,76.9,142.0,245.0,0.00,0.00,0.00,2.48,STP-E1-R2-85e1afbc
+STP-E1,"Burst (10ms 간격)",E,3,combined,high,10,,,,50,100.00,77.7,199.0,274.0,0.00,0.00,0.00,2.39,STP-E1-R3-7d90530d
+STP-E2,"Moderate (200ms 간격)",E,1,combined,high,200,,,,50,100.00,76.6,190.0,202.0,0.00,0.00,0.00,1.67,STP-E2-R1-c3c58b60
+STP-E2,"Moderate (200ms 간격)",E,2,combined,high,200,,,,50,100.00,64.4,224.0,278.0,0.00,0.00,0.00,1.77,STP-E2-R2-b207a435
+STP-E2,"Moderate (200ms 간격)",E,3,combined,high,200,,,,50,100.00,62.1,155.0,273.0,0.00,0.00,0.00,1.75,STP-E2-R3-dbfa2c66
+STP-E3,"Slow (1000ms 간격)",E,1,combined,high,1000,,,,50,100.00,79.5,193.0,282.0,0.00,0.00,0.00,0.73,STP-E3-R1-8cf395d0
+STP-E3,"Slow (1000ms 간격)",E,2,combined,high,1000,,,,50,100.00,96.9,202.0,246.0,0.00,0.00,0.00,0.72,STP-E3-R2-c949e07e
+STP-E3,"Slow (1000ms 간격)",E,3,combined,high,1000,,,,50,100.00,96.6,196.0,264.0,0.00,0.00,0.00,0.72,STP-E3-R3-191bf5c2
+STP-F1,"Minimal payload (<100B)",F,1,combined,high,200,,,,50,100.00,66.5,160.0,273.0,0.00,0.00,0.00,1.65,STP-F1-R1-c5c291d0
+STP-F1,"Minimal payload (<100B)",F,2,combined,high,200,,,,50,100.00,69.3,199.0,251.0,0.00,0.00,0.00,1.66,STP-F1-R2-2c250f95
+STP-F1,"Minimal payload (<100B)",F,3,combined,high,200,,,,50,100.00,67.8,170.0,233.0,0.00,0.00,0.00,1.67,STP-F1-R3-534f5b0b
+STP-F2,"Medium payload (2KB)",F,1,data,high,200,,,2048,50,100.00,66.6,186.0,266.0,0.00,0.00,0.00,1.70,STP-F2-R1-a7b648a3
+STP-F2,"Medium payload (2KB)",F,2,data,high,200,,,2048,50,100.00,67.7,185.0,245.0,0.00,0.00,0.00,1.66,STP-F2-R2-5a202806
+STP-F2,"Medium payload (2KB)",F,3,data,high,200,,,2048,50,100.00,64.7,144.0,273.0,0.00,0.00,0.00,1.71,STP-F2-R3-650b9bcb
+STP-F3,"Large payload (4KB, 한도)",F,1,data,high,200,,,3900,50,100.00,83.5,187.0,200.0,0.00,0.00,0.00,1.58,STP-F3-R1-6205e9f9
+STP-F3,"Large payload (4KB, 한도)",F,2,data,high,200,,,3900,50,100.00,72.8,187.0,242.0,0.00,0.00,0.00,1.59,STP-F3-R2-2eb8f5fd
+STP-F3,"Large payload (4KB, 한도)",F,3,data,high,200,,,3900,50,100.00,70.9,184.0,266.0,0.00,0.00,0.00,1.63,STP-F3-R3-b943205d

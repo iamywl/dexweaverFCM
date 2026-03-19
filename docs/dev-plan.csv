@@ -1,0 +1,58 @@
+﻿Phase,Week,Task ID,Task,Detail,Category,Priority,Status,Dependency,Deliverable
+Phase 0,W1,0-1-1,Firebase 프로젝트 생성,Firebase Console에서 dexweaver-fcm 프로젝트 생성 (Spark 무료 플랜),인프라,P0,TODO,,Firebase 프로젝트
+Phase 0,W1,0-1-2,iOS 앱 등록 (Firebase),Bundle ID: com.dexweaver.fcm / GoogleService-Info.plist 다운로드,인프라,P0,TODO,0-1-1,GoogleService-Info.plist
+Phase 0,W1,0-1-3,APNs Auth Key 발급,Apple Developer → Keys → APNs Key (.p8 파일 + Key ID),인프라,P0,TODO,,.p8 파일
+Phase 0,W1,0-1-4,APNs Key Firebase 등록,Firebase Console → Cloud Messaging → APNs Authentication Key 업로드,인프라,P0,TODO,0-1-2 / 0-1-3,FCM-APNs 연동
+Phase 0,W1,0-1-5,Firestore 활성화,Firebase Console → Firestore Database 생성 (asia-northeast3),인프라,P0,TODO,0-1-1,Firestore DB
+Phase 0,W1,0-1-6,서비스 계정 키 발급,GCP Console → IAM → 서비스 계정 키(.json) 다운로드 (로컬 Admin SDK용),인프라,P0,TODO,0-1-1,serviceAccountKey.json
+Phase 0,W1,0-1-7,로컬 환경 설정,"Node.js 20 + Firebase CLI + Flutter + Xcode + CocoaPods 설치",인프라,P0,TODO,,개발 환경
+Phase 0,W1,0-2-1,Firebase Admin SDK 초기화,src/config/firebase.ts — 서비스 계정 키로 로컬 초기화,백엔드(로컬),P0,TODO,0-1-6,firebase.ts
+Phase 0,W1,0-2-2,토큰 등록 스크립트,src/scripts/register-token.ts — Firestore에 디바이스 토큰 저장/갱신,백엔드(로컬),P0,TODO,0-2-1,register-token.ts
+Phase 0,W1,0-2-3,메시지 전송 스크립트 (L0),src/scripts/send.ts — 단일 메시지 전송 (FCM Admin SDK),백엔드(로컬),P0,TODO,0-2-1,send.ts
+Phase 0,W1,0-2-4,ACK 수신 로직,src/scripts/ack-listener.ts — Firestore onSnapshot으로 ACK 수신 감지,백엔드(로컬),P0,TODO,0-2-1,ack-listener.ts
+Phase 0,W1,0-2-5,로컬 서버 실행 확인,ts-node 또는 tsx로 스크립트 정상 실행 확인,백엔드(로컬),P0,TODO,0-2-2 / 0-2-3 / 0-2-4,실행 확인
+Phase 0,W1,0-3-1,Flutter 프로젝트 생성,flutter create --org com.dexweaver app,클라이언트,P0,TODO,0-1-7,Flutter 프로젝트
+Phase 0,W1,0-3-2,FlutterFire 연동,"firebase_core, firebase_messaging, cloud_firestore 패키지 추가 + GoogleService-Info.plist 배치",클라이언트,P0,TODO,0-3-1 / 0-1-2,FlutterFire 연동
+Phase 0,W1,0-3-3,FCM 서비스 구현,fcm_service.dart — FCM 초기화 / 토큰 등록 / 메시지 수신,클라이언트,P0,TODO,0-3-2,fcm_service.dart
+Phase 0,W1,0-3-4,ACK 서비스 구현,ack_service.dart — 수신 시 Firestore에 직접 ACK 문서 작성,클라이언트,P0,TODO,0-3-3,ack_service.dart
+Phase 0,W1,0-3-5,iOS 빌드 및 실기기 테스트,Xcode로 iPhone에 설치 후 푸시 수신 확인,클라이언트,P0,TODO,0-3-4,실기기 동작
+Phase 0,W1,0-4-1,E2E 검증,토큰 등록 → 메시지 전송 → 푸시 수신 → ACK 저장 전체 흐름 확인,검증,P0,TODO,0-2-5 / 0-3-5,E2E 통과
+Phase 1,W2,1-1,EXP-S01 실행,단일 디바이스 정상 전송 (iPhone / Foreground / data 메시지) — 2500건×3회,실험,P0,TODO,0-4-1,EXP-S01 결과
+Phase 1,W2,1-2,EXP-S02 실행,Background + Notification 메시지 — 2500건×3회,실험,P0,TODO,0-4-1,EXP-S02 결과
+Phase 1,W2,1-3,EXP-S04 실행,Collapsible 메시지 적정 빈도 (3분 간격) — 100건×3회,실험,P0,TODO,0-4-1,EXP-S04 결과
+Phase 1,W2,1-4,EXP-S05 실행,"Data/Notification/Combined × Foreground/Background/Terminated — 9조합×900건",실험,P0,TODO,0-4-1,EXP-S05 결과
+Phase 1,W2,1-5,실험 자동화 스크립트,scripts/experiments/phase1-baseline.ts 구현,개발,P0,TODO,0-2-5,phase1-baseline.ts
+Phase 1,W2,1-6,지표 계산 스크립트,scripts/analyzer/calculate_metrics.py — M1~M4 계산,개발,P0,TODO,,calculate_metrics.py
+Phase 1,W2,1-7,Baseline 결과 문서화,results/phase1-baseline.md 작성 (전달률 ≥ 99% 확인),문서,P0,TODO,1-1 / 1-2 / 1-3 / 1-4,phase1-baseline.md
+Phase 2,W3,2-1,Safety Classifier 구현,src/modules/safety/safetyClassifier.ts — 페이로드 검증 / rate limit 검사,백엔드(로컬),P0,TODO,,safetyClassifier.ts
+Phase 2,W3,2-2,EXP-U01 실행,Stale 토큰 비율별 전달률 (0%~100%) — 비율별 1000건×3회,실험,P0,TODO,0-4-1,EXP-U01 결과
+Phase 2,W3,2-3,EXP-U02 실행,페이로드 크기 경계값 (1KB~8KB) — 크기별 500건×3회,실험,P0,TODO,2-1,EXP-U02 결과
+Phase 2,W3,2-4,EXP-U03 실행,"Rate Limit 초과 패턴 (100~12K msg/sec) — 속도별 30초",실험,P0,TODO,2-1,EXP-U03 결과
+Phase 2,W3,2-5,EXP-U04 실행,OAuth2 인증 만료 시뮬레이션 — 시나리오별 500건,실험,P0,TODO,,EXP-U04 결과
+Phase 2,W3,2-6,EXP-U05 실행,Non-collapsible 100건 한도 (비행기 모드) — 50/80/100/101/150건,실험,P0,TODO,,EXP-U05 결과
+Phase 2,W3,2-7,EXP-U07 실행,"Collapsible 스로틀링 (3분/1분/30초/10초/1초 간격)",실험,P0,TODO,,EXP-U07 결과
+Phase 2,W3,2-8,EXP-U11 실행 (핵심),"iOS Silent 스로틀링 — 빈도별(1~30건/시간) 3시간×3회",실험,P0,TODO,,EXP-U11 결과
+Phase 2,W3,2-9,EXP-U12 실행,iOS Force Kill + Silent Push — Kill/재실행 각 500건×3회,실험,P0,TODO,,EXP-U12 결과
+Phase 2,W3,2-10,EXP-U13 실행,"디바이스 오프라인+복구 — 오프라인 10분/1시간/24시간 × 10/50/99건",실험,P0,TODO,,EXP-U13 결과
+Phase 2,W3,2-11,EXP-U14 실행,"네트워크 장애 시뮬레이션 (Charles Proxy) — 지연/패킷손실/대역폭 제한",실험,P0,TODO,,EXP-U14 결과
+Phase 2,W3,2-12,EXP-U15 실행,중복 전송 테스트 — 동일 ID로 1/2/5/10회 전송,실험,P1,TODO,,EXP-U15 결과
+Phase 2,W3,2-13,Phase 2 결과 문서화,results/phase2-{case}.md × 11 작성,문서,P0,TODO,2-2~2-12,결과 카드 11개
+Phase 3,W4,3-1,QoS Engine 구현 (L1),src/modules/qos/qosEngine.ts — ACK 미수신 시 재시도 (최대 5회 exponential backoff),백엔드(로컬),P0,TODO,,qosEngine.ts
+Phase 3,W4,3-2,Retry Manager 구현,src/modules/qos/retryManager.ts — 로컬 인메모리 큐 + setTimeout 기반 재시도,백엔드(로컬),P0,TODO,3-1,retryManager.ts
+Phase 3,W4,3-3,Dead Letter Queue 구현,src/modules/qos/deadLetterQueue.ts — 최대 재시도 초과 시 Firestore DLQ 컬렉션에 저장,백엔드(로컬),P1,TODO,3-1,deadLetterQueue.ts
+Phase 3,W4,3-4,클라이언트 중복 제거 (L2),services/dedup_service.dart — message_id 기반 중복 수신 방지,클라이언트,P0,TODO,,dedup_service.dart
+Phase 3,W4,3-5,ACK Matcher 구현,src/modules/ack/ackMatcher.ts — message↔ack 매칭 및 미수신 감지,백엔드(로컬),P0,TODO,,ackMatcher.ts
+Phase 3,W4,3-6,EXP-C04 실행,iOS Silent + 저전력 모드 + Background 복합 실험,실험,P0,TODO,3-1,EXP-C04 결과
+Phase 3,W4,3-7,EXP-C06 실행,네트워크 지연 + Collapsible 스로틀링 복합 실험,실험,P0,TODO,3-1,EXP-C06 결과
+Phase 3,W4,3-8,EXP-C-iOS01 실행,iOS Force Kill + 오프라인 복구 복합 실험,실험,P1,TODO,3-1,EXP-C-iOS01 결과
+Phase 3,W4,3-9,QoS 효과 실험 — EXP-U03,"Rate Limit에 대해 L0/L1/L2 각 1000건×3회",실험,P0,TODO,3-1 / 3-4,QoS vs U03
+Phase 3,W4,3-10,QoS 효과 실험 — EXP-U04,"인증 만료에 대해 L0/L1/L2 각 500건×3회",실험,P0,TODO,3-1,QoS vs U04
+Phase 3,W4,3-11,QoS 효과 실험 — EXP-U14,"네트워크 장애에 대해 L0/L1/L2 각 1000건×3회",실험,P0,TODO,3-1,QoS vs U14
+Phase 3,W4,3-12,Phase 3 결과 문서화,"results/phase3-combined.md, phase4-qos-effect.md, final-comparison.md",문서,P0,TODO,3-6~3-11,종합 비교 매트릭스
+Phase 4,W5,4-1,QoS 파라미터 확정,실험 결과 기반 — 재시도 횟수/간격/DLQ 임계값 결정,설계,P0,TODO,3-12,QoS 파라미터
+Phase 4,W5,4-2,토큰 관리 고도화,src/scripts/scheduled-cleanup.ts — stale 토큰 주기적 정리 (node-cron),백엔드(로컬),P1,TODO,4-1,scheduled-cleanup.ts
+Phase 4,W5,4-3,Metrics Collector 구현,src/modules/metrics/metricsCollector.ts — M1~M8 계산 및 콘솔/파일 출력,백엔드(로컬),P1,TODO,,metricsCollector.ts
+Phase 4,W5,4-4,실험 결과 대시보드,로컬 웹 대시보드 또는 CSV/JSON 기반 시각화 (전달률/지연시간/에러율),모니터링,P1,TODO,4-3,대시보드
+Phase 4,W6,4-5,E2E 재검증,Phase 1 대조군 실험을 완성된 시스템으로 재실행,검증,P0,TODO,4-1 / 4-2,재검증 결과
+Phase 4,W6,4-6,최종 QoS 보고서,종합 QoS 등급 산출 + 의사결정 사항 정리,문서,P0,TODO,4-5,최종 보고서
+Phase 4,W6,4-7,스크립트 사용 문서 작성,로컬 Node.js 스크립트 실행 방법 및 CLI 옵션 문서화,문서,P1,TODO,,스크립트 문서

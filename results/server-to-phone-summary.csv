@@ -1,0 +1,17 @@
+scenario_id,scenario_name,group,description,msg_type,priority,interval_ms,ttl_sec,payload_bytes,avg_delivery_rate_pct,avg_latency_ms,avg_p95_ms,avg_p99_ms,avg_throughput_msg_per_sec,repeats
+STP-A1,"Data-only (Silent Push)",A,"data 메시지만 전송, 앱이 직접 알림 표시 처리",data,high,200,,,100.00,99.1,234.0,305.7,1.68,3
+STP-A2,"Notification-only",A,"notification 메시지만 전송, 시스템이 알림 표시",notification,high,200,,,100.00,93.9,186.3,271.7,1.75,3
+STP-A3,"Combined (Data+Notification)",A,"data + notification 결합, 가장 일반적인 사용법",combined,high,200,,,100.00,69.2,162.3,233.0,1.73,3
+STP-B1,"High Priority",B,"android.priority=high, 즉시 전달 시도",combined,high,200,,,100.00,69.5,181.7,281.7,1.73,3
+STP-B2,"Normal Priority",B,"android.priority=normal, 배터리 최적화 허용",combined,normal,200,,,100.00,65.5,158.0,273.7,1.74,3
+STP-C1,"TTL=0 (즉시 전달 또는 폐기)",C,"TTL 0초, 디바이스 오프라인이면 즉시 폐기",combined,high,200,0,,0.00,0.0,0.0,0.0,1.90,3
+STP-C2,"TTL=86400 (24시간)",C,"TTL 24시간, FCM 기본값",combined,high,200,86400,,0.00,0.0,0.0,0.0,1.90,3
+STP-C3,"TTL=2419200 (28일, 최대)",C,"TTL 28일, FCM 최대 보관 기간",combined,high,200,2419200,,0.00,0.0,0.0,0.0,1.89,3
+STP-D1,"Non-collapsible (각각 고유)",D,"collapse_key 없음, 모든 메시지 개별 전달",data,high,200,,,100.00,72.6,174.7,211.7,1.68,3
+STP-D2,"Collapsible (동일 키)",D,"동일 collapse_key, 최신 메시지만 전달 (대기 중 덮어쓰기)",data,high,200,,,13.33,70.8,148.0,180.0,1.51,3
+STP-E1,"Burst (10ms 간격)",E,"최대 속도로 연속 전송, rate limit 테스트",combined,high,10,,,100.00,78.6,173.3,239.0,2.46,3
+STP-E2,"Moderate (200ms 간격)",E,"적정 속도 전송",combined,high,200,,,100.00,67.7,189.7,251.0,1.73,3
+STP-E3,"Slow (1000ms 간격)",E,"느린 속도 전송, 여유 있는 처리",combined,high,1000,,,100.00,91.0,197.0,264.0,0.72,3
+STP-F1,"Minimal payload (<100B)",F,"최소 페이로드, 알림만 전달",combined,high,200,,,100.00,67.9,176.3,252.3,1.66,3
+STP-F2,"Medium payload (2KB)",F,"중간 크기 데이터 포함",data,high,200,,2048,100.00,66.3,171.7,261.3,1.69,3
+STP-F3,"Large payload (4KB, 한도)",F,"FCM data 메시지 최대 크기에 근접",data,high,200,,3900,100.00,75.7,186.0,236.0,1.60,3

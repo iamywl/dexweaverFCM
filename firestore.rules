@@ -1,0 +1,33 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // tokens: 앱에서 읽기/쓰기 가능
+    match /tokens/{tokenId} {
+      allow read, write: if true;
+    }
+
+    // messages: 앱에서 읽기만 가능 (쓰기는 Admin SDK에서만)
+    match /messages/{messageId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // acks: 앱에서 쓰기 가능 (ACK 전송용)
+    match /acks/{ackId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // experiments: 읽기만 가능
+    match /experiments/{experimentId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // dlq: Admin SDK에서만 접근
+    match /dlq/{docId} {
+      allow read, write: if false;
+    }
+  }
+}

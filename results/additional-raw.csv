@@ -1,0 +1,27 @@
+scenario_id,scenario_name,group,repeat,mode,msg_type,priority,interval_ms,collapse_key,payload_bytes,duplicate_count,msg_count,delivery_rate_pct,avg_latency_ms,p95_latency_ms,p99_latency_ms,retry_rate_pct,dlq_rate_pct,duplicate_rate_pct,throughput_msg_per_sec,errors,experiment_id
+STP-G1,"Valid Token (대조군)",G,1,standard,data,high,200,,,,30,100.00,114.3,225.0,519.0,0.00,0.00,0.00,1.51,"",STP-G1-R1-321f2e36
+STP-G1,"Valid Token (대조군)",G,2,standard,data,high,200,,,,30,100.00,84.3,187.0,216.0,0.00,0.00,0.00,1.60,"",STP-G1-R2-9c2b3e5e
+STP-G2,"Invalid Token (100% 무효)",G,1,stale_token,data,high,200,,,,30,0.00,,,,0.00,0.00,0.00,1.81,"messaging/invalid-argument",STP-G2-R1-ccfab57a
+STP-G2,"Invalid Token (100% 무효)",G,2,stale_token,data,high,200,,,,30,0.00,,,,0.00,0.00,0.00,1.66,"messaging/invalid-argument",STP-G2-R2-62c486ff
+STP-G3,"Mixed Token (50% 유효/50% 무효)",G,1,mixed_token,data,high,200,,,,30,50.00,97.5,285.0,285.0,0.00,0.00,0.00,1.59,"messaging/invalid-argument",STP-G3-R1-c2e81554
+STP-G3,"Mixed Token (50% 유효/50% 무효)",G,2,mixed_token,data,high,200,,,,30,50.00,87.9,296.0,296.0,0.00,0.00,0.00,1.64,"messaging/invalid-argument",STP-G3-R2-a856e424
+STP-H1,"Payload 4000B (한도 이내)",H,1,payload_boundary,data,high,200,,4000,,30,100.00,105.4,254.0,298.0,0.00,0.00,0.00,1.55,"",STP-H1-R1-06409d02
+STP-H1,"Payload 4000B (한도 이내)",H,2,payload_boundary,data,high,200,,4000,,30,100.00,112.2,269.0,348.0,0.00,0.00,0.00,1.51,"",STP-H1-R2-531926b8
+STP-H2,"Payload 4096B (정확한 한도)",H,1,payload_boundary,data,high,200,,4096,,30,100.00,98.8,198.0,284.0,0.00,0.00,0.00,1.54,"",STP-H2-R1-64ed2802
+STP-H2,"Payload 4096B (정확한 한도)",H,2,payload_boundary,data,high,200,,4096,,30,100.00,82.2,222.0,316.0,0.00,0.00,0.00,1.64,"",STP-H2-R2-db3bc2f9
+STP-H3,"Payload 5000B (한도 초과)",H,1,payload_boundary,data,high,200,,5000,,30,0.00,,,,0.00,0.00,0.00,1.69,"Android message is too big",STP-H3-R1-3192308a
+STP-H3,"Payload 5000B (한도 초과)",H,2,payload_boundary,data,high,200,,5000,,30,0.00,,,,0.00,0.00,0.00,1.82,"Android message is too big",STP-H3-R2-cdfcb040
+STP-I1,"Collapsible Burst (100ms)",I,1,standard,data,high,100,throttle-test,,,30,66.67,72.7,92.0,163.0,0.00,0.00,0.00,1.88,"",STP-I1-R1-e73abcbd
+STP-I1,"Collapsible Burst (100ms)",I,2,standard,data,high,100,throttle-test,,,30,0.00,,,,0.00,0.00,0.00,1.88,"",STP-I1-R2-8a6656ba
+STP-I2,"Collapsible 1s 간격",I,1,standard,data,high,1000,throttle-test,,,30,0.00,,,,0.00,0.00,0.00,0.68,"",STP-I2-R1-0161e653
+STP-I2,"Collapsible 1s 간격",I,2,standard,data,high,1000,throttle-test,,,30,3.33,8930.0,8930.0,8930.0,0.00,0.00,0.00,0.69,"",STP-I2-R2-7e49cff0
+STP-I3,"Collapsible 3s 간격",I,1,standard,data,high,3000,throttle-test,,,20,0.00,,,,0.00,0.00,0.00,0.30,"",STP-I3-R1-47ba3fe7
+STP-I3,"Collapsible 3s 간격",I,2,standard,data,high,3000,throttle-test,,,20,5.00,11286.0,11286.0,11286.0,0.00,0.00,0.00,0.30,"",STP-I3-R2-74e4acc8
+STP-I4,"Collapsible 10s 간격",I,1,standard,data,high,10000,throttle-test,,,15,6.67,10476.0,10476.0,10476.0,0.00,0.00,0.00,0.10,"",STP-I4-R1-bbcd052b
+STP-I4,"Collapsible 10s 간격",I,2,standard,data,high,10000,throttle-test,,,15,0.00,,,,0.00,0.00,0.00,0.10,"",STP-I4-R2-f0055b81
+STP-J1,"단일 전송 (대조군)",J,1,standard,combined,high,500,,,,10,100.00,127.5,259.0,259.0,0.00,0.00,0.00,1.10,"",STP-J1-R1-2e079166
+STP-J1,"단일 전송 (대조군)",J,2,standard,combined,high,500,,,,10,100.00,116.8,268.0,268.0,0.00,0.00,0.00,1.09,"",STP-J1-R2-fa6d21be
+STP-J2,"3회 중복 전송",J,1,duplicate_send,combined,high,500,,,3,10,100.00,436.3,780.0,883.0,0.00,0.00,100.00,0.88,"",STP-J2-R1-fda8c4aa
+STP-J2,"3회 중복 전송",J,2,duplicate_send,combined,high,500,,,3,10,100.00,409.5,861.0,988.0,0.00,0.00,100.00,0.89,"",STP-J2-R2-ce7d98ff
+STP-J3,"5회 중복 전송",J,1,duplicate_send,combined,high,500,,,5,10,100.00,608.4,1035.0,1217.0,0.00,0.00,100.00,0.73,"",STP-J3-R1-799a839a
+STP-J3,"5회 중복 전송",J,2,duplicate_send,combined,high,500,,,5,10,100.00,689.9,1168.0,1257.0,0.00,0.00,100.00,0.65,"",STP-J3-R2-e7d3cb29
